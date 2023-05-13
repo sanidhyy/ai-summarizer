@@ -11,6 +11,7 @@ const Hero = () => {
           alt="Sumz"
           className="w-28 object-contain"
           title="Summize"
+          draggable="false"
         />
 
         <button

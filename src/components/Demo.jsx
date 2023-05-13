@@ -1,7 +1,11 @@
 import React, { useState, useEffect } from "react";
+import { isWebUri } from "valid-url";
+import { toast } from "react-toastify";
 
 import { useLazyGetSummaryQuery } from "../services/article";
 import { copy, linkIcon, loader, tick } from "../assets";
+
+import "react-toastify/dist/ReactToastify.css";
 
 const localStorageArticlesKey = "articles";
 
@@ -28,20 +32,34 @@ const Demo = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
+    if (!isWebUri(article.url)) {
+      toast.error("Invalid URL");
+      return;
+    }
+
     const { data } = await getSummary({ articleUrl: article.url });
 
-    if (data?.summary) {
-      const newArticle = { ...article, summary: data.summary };
-      const updatedAllArticles = [newArticle, ...allArticles];
+    if (!data?.summary) return;
 
-      setArticle(newArticle);
-      setAllArticles(updatedAllArticles);
+    const newArticle = { ...article, summary: data.summary };
 
-      localStorage.setItem(
-        localStorageArticlesKey,
-        JSON.stringify(updatedAllArticles)
-      );
+    let updatedAllArticles = [newArticle, ...allArticles];
+
+    setArticle(newArticle);
+
+    // remove last element if articles are more than 4
+    if (updatedAllArticles.length > 4) {
+      updatedAllArticles.pop();
     }
+
+    setAllArticles(updatedAllArticles);
+
+    localStorage.setItem(
+      localStorageArticlesKey,
+      JSON.stringify(updatedAllArticles)
+    );
+
+    toast.success("Article Summarized");
   };
 
   const handleCopy = (copyUrl) => {
@@ -57,20 +75,25 @@ const Demo = () => {
         <form
           className="relative flex justify-center items-center"
           onSubmit={handleSubmit}
+          autoCapitalize="off"
+          autoComplete="off"
+          noValidate
         >
           <img
             src={linkIcon}
             alt="Link"
             className="absolute left-0 my-2 ml-3 w-5"
+            draggable="false"
           />
 
           <input
             type="url"
             placeholder="Paste the Article Link"
+            title="Paste the Article Link"
             value={article.url}
             onChange={(e) => setArticle({ ...article, url: e.target.value })}
-            required
             className="url_input peer"
+            required
           />
 
           <button
@@ -97,7 +120,8 @@ const Demo = () => {
           <div className="flex flex-col gap-1 max-h-60 overflow-y-auto">
             {allArticles.map((article, i) => (
               <div className="link_card" key={`link-${i}`}>
-                <div
+                <button
+                  type="button"
                   className="copy_btn"
                   onClick={() => handleCopy(article.url)}
                 >
@@ -111,15 +135,15 @@ const Demo = () => {
                     }
                     className="w-[40%] h-[40%] object-contain"
                   />
-                </div>
+                </button>
 
-                <a
-                  className="hover:underline flex-1 font-satoshi text-orange-500 font-medium text-sm truncate cursor-pointer"
+                <button
+                  className="hover:underline flex flex-1 font-satoshi text-orange-500 font-medium text-sm truncate cursor-pointer"
                   onClick={() => setArticle(article)}
                   title={article.url}
                 >
                   {article.url}
-                </a>
+                </button>
               </div>
             ))}
           </div>
@@ -144,7 +168,7 @@ const Demo = () => {
           </p>
         ) : (
           article.summary && (
-            <div className="flex flex-col gap-3">
+            <article className="flex flex-col gap-3">
               <h2 className="font-satoshi font-bold text-gray-600 text-xl">
                 Article <span className="orange_gradient">Summary</span>
               </h2>
@@ -154,7 +178,7 @@ const Demo = () => {
                   {article.summary}
                 </p>
               </div>
-            </div>
+            </article>
           )
         )}
       </div>
