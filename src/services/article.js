@@ -9,7 +9,10 @@ export const articleApi = createApi({
     baseUrl: "https://article-extractor-and-summarizer.p.rapidapi.com/",
     // headers
     prepareHeaders: (headers) => {
-      headers.set("X-RapidAPI-Key", import.meta.env.VITE_RAPIDAPI_ARTICLE_KEY);
+      headers.set(
+        "X-RapidAPI-Key",
+        import.meta.env.VITE_RAPIDAPI_ARTICLE_KEY || "ndandad"
+      );
       headers.set(
         "X-RapidAPI-Host",
         "article-extractor-and-summarizer.p.rapidapi.com"
