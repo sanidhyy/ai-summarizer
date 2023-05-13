@@ -1,13 +1,16 @@
+/* tailwind */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+/* default */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+/* main */
 .main {
   width: 100vw;
   min-height: 100vh;
@@ -40,6 +43,7 @@
   filter: invert(1);
 }
 
+/* gradient */
 .gradient {
   height: fit-content;
   z-index: 3;
@@ -65,13 +69,14 @@
   opacity: 0.15;
 }
 
+/* mobile responsiveness */
 @media screen and (max-width: 640px) {
   .main {
     padding: 0;
   }
 }
 
-/* Tailwind Styles */
+/* tailwind styles */
 
 .app {
   @apply relative z-10 flex justify-center items-center flex-col max-w-7xl mx-auto sm:px-16 px-6;

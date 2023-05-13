@@ -13,6 +13,9 @@ const HERO_SUBTITLE_RIGHT =
 // Article History Limit
 const MAX_ARTICLE_HISTORY = 4;
 
+// copied to clipboard msg timeout (in milliseconds ms)
+const MAX_CLIPBOARD_TIMEOUT = 3000;
+
 // Local Storage Articles Key
 const LOCALSTORAGE_ARTICLES_KEY = "articles";
 
@@ -28,6 +31,7 @@ export {
   HERO_SUBTITLE_LEFT,
   HERO_SUBTITLE_RIGHT,
   MAX_ARTICLE_HISTORY,
+  MAX_CLIPBOARD_TIMEOUT,
   LOCALSTORAGE_ARTICLES_KEY,
   INVALID_URL_MSG,
   ARTICLE_SUMMARISED_MSG,

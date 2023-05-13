@@ -3,20 +3,25 @@ import { ToastContainer } from "react-toastify";
 import Hero from "./components/Hero";
 import Demo from "./components/Demo";
 
+// styles
 import "./App.css";
 
+// app
 const App = () => {
   return (
     <main>
+      {/* main */}
       <div className="main">
         <div className="gradient" />
       </div>
 
+      {/* app */}
       <div className="app">
         <Hero />
         <Demo />
       </div>
 
+      {/* toast */}
       <aside>
         <ToastContainer
           position="top-right"

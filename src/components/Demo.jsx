@@ -11,9 +11,12 @@ import {
   LOCALSTORAGE_ARTICLES_KEY,
 } from "../constants";
 
+// toast css
 import "react-toastify/dist/ReactToastify.css";
 
+// demo
 const Demo = () => {
+  // states
   const [article, setArticle] = useState({
     url: "",
     summary: "",
@@ -21,36 +24,48 @@ const Demo = () => {
   const [allArticles, setAllArticles] = useState([]);
   const [copied, setCopied] = useState("");
 
+  // article api handler/fetcher
   const [getSummary, { error, isFetching }] = useLazyGetSummaryQuery();
 
+  // fetch articles from local storage
   useEffect(() => {
     const articlesFromLocalStorage = JSON.parse(
       localStorage.getItem(LOCALSTORAGE_ARTICLES_KEY)
     );
 
+    // if articles exists
     if (articlesFromLocalStorage) {
       setAllArticles(articlesFromLocalStorage);
     }
   }, []);
 
+  // handle summarize input submit
   const handleSubmit = async (e) => {
+    // prevent default page reload
     e.preventDefault();
 
+    // already fetching data
     if (isFetching) return;
 
+    // invalid url
     if (!isWebUri(article.url)) {
       toast.error(INVALID_URL_MSG);
       return;
     }
 
+    // fetch summary from article api
     const { data } = await getSummary({ articleUrl: article.url });
 
+    // unable to fetch summary
     if (!data?.summary) return;
 
+    // get new article
     const newArticle = { ...article, summary: data.summary };
 
+    // update old articles
     let updatedAllArticles = [newArticle, ...allArticles];
 
+    // set new article
     setArticle(newArticle);
 
     // remove last element if articles are more than 4
@@ -58,26 +73,34 @@ const Demo = () => {
       updatedAllArticles.pop();
     }
 
+    // set all articles
     setAllArticles(updatedAllArticles);
 
+    // update local storage
     localStorage.setItem(
       LOCALSTORAGE_ARTICLES_KEY,
       JSON.stringify(updatedAllArticles)
     );
 
+    // toast success msg
     toast.success(ARTICLE_SUMMARISED_MSG);
   };
 
+  // handle copy to clipboard
   const handleCopy = (copyUrl) => {
+    // set copy state
     setCopied(copyUrl);
+    // copy to clipboard
     navigator.clipboard.writeText(copyUrl);
+    // show copied msg to user
     setTimeout(() => setCopied(false), 3000);
   };
 
   return (
     <section className="mt-16 w-full max-w-xl">
-      {/* Search */}
+      {/* search */}
       <div className="flex flex-col w-full gap-2">
+        {/* form */}
         <form
           className="relative flex justify-center items-center"
           onSubmit={handleSubmit}
@@ -85,6 +108,7 @@ const Demo = () => {
           autoComplete="off"
           noValidate
         >
+          {/* link icon */}
           <img
             src={linkIcon}
             alt="Link"
@@ -93,6 +117,7 @@ const Demo = () => {
             loading="lazy"
           />
 
+          {/* article link input */}
           <input
             type="url"
             placeholder="Paste the Article Link"
@@ -103,6 +128,7 @@ const Demo = () => {
             required
           />
 
+          {/* Submit Button */}
           {!isFetching && (
             <button
               type="submit"
@@ -127,6 +153,7 @@ const Demo = () => {
         {/* Browse URL History */}
         {!isFetching && (
           <div className="flex flex-col gap-1 max-h-60 overflow-y-auto">
+            {/* map over articles */}
             {allArticles.map((article, i) => (
               <div className="link_card" key={`link-${i}`}>
                 <button
@@ -134,6 +161,7 @@ const Demo = () => {
                   className="copy_btn"
                   onClick={() => handleCopy(article.url)}
                 >
+                  {/* copy to clipboard */}
                   <img
                     src={copied === article.url ? tick : copy}
                     alt={
@@ -147,6 +175,7 @@ const Demo = () => {
                   />
                 </button>
 
+                {/* article url */}
                 <button
                   className="hover:underline flex flex-1 font-satoshi text-orange-500 font-medium text-sm truncate cursor-pointer"
                   onClick={() => setArticle(article)}
@@ -163,6 +192,7 @@ const Demo = () => {
       {/* Display Results */}
       <div className="my-10 max-w-full flex justify-center items-center">
         {isFetching ? (
+          // loader
           <img
             src={loader}
             alt="Loading..."
@@ -170,6 +200,7 @@ const Demo = () => {
             loading="lazy"
           />
         ) : error ? (
+          // error
           <p className="font-inter font-bold text-black text-center">
             Well, that wasn't supposed to happen...
             <br />
@@ -179,11 +210,14 @@ const Demo = () => {
           </p>
         ) : (
           article.summary && (
+            // article summary
             <article className="flex flex-col gap-3">
+              {/* title */}
               <h2 className="font-satoshi font-bold text-gray-600 text-xl">
                 Article <span className="orange_gradient">Summary</span>
               </h2>
 
+              {/* summary */}
               <div className="summary_box">
                 <p className="font-inter font-medium text-sm text-gray-700">
                   {article.summary}
