@@ -72,7 +72,7 @@
 }
 
 .black_btn {
-  @apply rounded-full border border-black bg-black py-1.5 px-5 text-sm text-white transition-all hover:bg-white hover:text-black;
+  @apply rounded-full border border-black bg-black py-1.5 px-5 text-base text-white transition-all hover:bg-white hover:text-black;
 }
 
 .head_text {
