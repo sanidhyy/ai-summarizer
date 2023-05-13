@@ -1,14 +1,21 @@
 import React from "react";
 
+import Hero from "./components/Hero";
+import Demo from "./components/Demo";
 import "./App.css";
 
 const App = () => {
   return (
-    <div>
-      <h1 className="text-center text-green-500 text-3xl">
-        OpenAI Article Summarizer
-      </h1>
-    </div>
+    <main>
+      <div className="main">
+        <div className="gradient" />
+      </div>
+
+      <div className="app">
+        <Hero />
+        <Demo />
+      </div>
+    </main>
   );
 };
 
