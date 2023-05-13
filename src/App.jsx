@@ -1,8 +1,8 @@
-import React from "react";
 import { ToastContainer } from "react-toastify";
 
 import Hero from "./components/Hero";
 import Demo from "./components/Demo";
+
 import "./App.css";
 
 const App = () => {

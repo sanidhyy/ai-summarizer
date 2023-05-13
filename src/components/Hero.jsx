@@ -1,5 +1,3 @@
-import React from "react";
-
 import { logo } from "../assets";
 
 const Hero = () => {
@@ -12,6 +10,7 @@ const Hero = () => {
           className="w-28 object-contain"
           title="Summize"
           draggable="false"
+          loading="lazy"
         />
 
         <button

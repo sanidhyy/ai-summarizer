@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { isWebUri } from "valid-url";
 import { toast } from "react-toastify";
 
@@ -84,6 +84,7 @@ const Demo = () => {
             alt="Link"
             className="absolute left-0 my-2 ml-3 w-5"
             draggable="false"
+            loading="lazy"
           />
 
           <input
@@ -134,6 +135,7 @@ const Demo = () => {
                       copied === article.url ? "Copied" : "Copy to Clipboard"
                     }
                     className="w-[40%] h-[40%] object-contain"
+                    loading="lazy"
                   />
                 </button>
 
@@ -157,6 +159,7 @@ const Demo = () => {
             src={loader}
             alt="Loading..."
             className="w-20 h-20 object-contain"
+            loading="lazy"
           />
         ) : error ? (
           <p className="font-inter font-bold text-black text-center">
