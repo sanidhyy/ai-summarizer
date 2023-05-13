@@ -2,7 +2,7 @@
 <svg
    fill="none"
    shapeRendering="geometricPrecision"
-   stroke="currentColor"
+   stroke="#22C55E"
    strokeLinecap="round"
    strokeLinejoin="round"
    strokeWidth="1.5"

@@ -6,7 +6,12 @@ const Hero = () => {
   return (
     <header className="w-full flex justify-center items-center flex-col">
       <nav className="flex justify-between items-center w-full mb-10 pt-3">
-        <img src={logo} alt="Sumz" className="w-28 object-contain" />
+        <img
+          src={logo}
+          alt="Sumz"
+          className="w-28 object-contain"
+          title="Summize"
+        />
 
         <button
           type="button"
@@ -17,6 +22,7 @@ const Hero = () => {
             )
           }
           className="black_btn flex items-center gap-1"
+          title="View Source Code"
         >
           {/* Icon */}
           <svg

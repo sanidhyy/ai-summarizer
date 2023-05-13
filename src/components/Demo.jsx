@@ -76,32 +76,54 @@ const Demo = () => {
           <button
             type="submit"
             className="submit_btn peer-focus:border-gray-700 peer-focus:text-gray-700"
+            title="Summarize Article"
           >
-            ↩
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="12"
+              height="12"
+              viewBox="0 0 20 20"
+            >
+              <path
+                fill="currentColor"
+                d="M19.3 0a.7.7 0 0 1 .7.7v8.278a6.7 6.7 0 0 1-6.699 6.698l-10.996-.001l3.131 3.13a.7.7 0 0 1-.99.99l-4.24-4.241a.7.7 0 0 1 0-.99l4.241-4.241a.7.7 0 1 1 .99.99l-2.965 2.963h10.83A5.299 5.299 0 0 0 18.6 8.978V.7a.7.7 0 0 1 .7-.7Z"
+              />
+            </svg>
           </button>
         </form>
 
         {/* Browse URL History */}
-        <div className="flex flex-col gap-1 max-h-60 overflow-y-auto">
-          {allArticles.map((article, i) => (
-            <div className="link_card" key={`link-${i}`}>
-              <div className="copy_btn" onClick={() => handleCopy(article.url)}>
-                <img
-                  src={copied === article.url ? tick : copy}
-                  alt={copied === article.url ? "Copied" : "Copy"}
-                  className="w-[40%] h-[40%] object-contain"
-                />
-              </div>
+        {!isFetching && (
+          <div className="flex flex-col gap-1 max-h-60 overflow-y-auto">
+            {allArticles.map((article, i) => (
+              <div className="link_card" key={`link-${i}`}>
+                <div
+                  className="copy_btn"
+                  onClick={() => handleCopy(article.url)}
+                >
+                  <img
+                    src={copied === article.url ? tick : copy}
+                    alt={
+                      copied === article.url ? "Copied" : "Copy to Clipboard"
+                    }
+                    title={
+                      copied === article.url ? "Copied" : "Copy to Clipboard"
+                    }
+                    className="w-[40%] h-[40%] object-contain"
+                  />
+                </div>
 
-              <a
-                className="hover:underline flex-1 font-satoshi text-orange-500 font-medium text-sm truncate cursor-pointer"
-                onClick={() => setArticle(article)}
-              >
-                {article.url}
-              </a>
-            </div>
-          ))}
-        </div>
+                <a
+                  className="hover:underline flex-1 font-satoshi text-orange-500 font-medium text-sm truncate cursor-pointer"
+                  onClick={() => setArticle(article)}
+                  title={article.url}
+                >
+                  {article.url}
+                </a>
+              </div>
+            ))}
+          </div>
+        )}
       </div>
 
       {/* Display Results */}
