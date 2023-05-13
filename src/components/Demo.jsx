@@ -4,10 +4,14 @@ import { toast } from "react-toastify";
 
 import { useLazyGetSummaryQuery } from "../services/article";
 import { copy, linkIcon, loader, tick } from "../assets";
+import {
+  MAX_ARTICLE_HISTORY,
+  INVALID_URL_MSG,
+  ARTICLE_SUMMARISED_MSG,
+  LOCALSTORAGE_ARTICLES_KEY,
+} from "../constants";
 
 import "react-toastify/dist/ReactToastify.css";
-
-const localStorageArticlesKey = "articles";
 
 const Demo = () => {
   const [article, setArticle] = useState({
@@ -21,7 +25,7 @@ const Demo = () => {
 
   useEffect(() => {
     const articlesFromLocalStorage = JSON.parse(
-      localStorage.getItem(localStorageArticlesKey)
+      localStorage.getItem(LOCALSTORAGE_ARTICLES_KEY)
     );
 
     if (articlesFromLocalStorage) {
@@ -32,8 +36,10 @@ const Demo = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
+    if (isFetching) return;
+
     if (!isWebUri(article.url)) {
-      toast.error("Invalid URL");
+      toast.error(INVALID_URL_MSG);
       return;
     }
 
@@ -48,18 +54,18 @@ const Demo = () => {
     setArticle(newArticle);
 
     // remove last element if articles are more than 4
-    if (updatedAllArticles.length > 4) {
+    if (updatedAllArticles.length > MAX_ARTICLE_HISTORY) {
       updatedAllArticles.pop();
     }
 
     setAllArticles(updatedAllArticles);
 
     localStorage.setItem(
-      localStorageArticlesKey,
+      LOCALSTORAGE_ARTICLES_KEY,
       JSON.stringify(updatedAllArticles)
     );
 
-    toast.success("Article Summarized");
+    toast.success(ARTICLE_SUMMARISED_MSG);
   };
 
   const handleCopy = (copyUrl) => {
@@ -97,23 +103,25 @@ const Demo = () => {
             required
           />
 
-          <button
-            type="submit"
-            className="submit_btn peer-focus:border-gray-700 peer-focus:text-gray-700"
-            title="Summarize Article"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="12"
-              height="12"
-              viewBox="0 0 20 20"
+          {!isFetching && (
+            <button
+              type="submit"
+              className="submit_btn peer-focus:border-gray-700 peer-focus:text-gray-700"
+              title="Summarize Article"
             >
-              <path
-                fill="currentColor"
-                d="M19.3 0a.7.7 0 0 1 .7.7v8.278a6.7 6.7 0 0 1-6.699 6.698l-10.996-.001l3.131 3.13a.7.7 0 0 1-.99.99l-4.24-4.241a.7.7 0 0 1 0-.99l4.241-4.241a.7.7 0 1 1 .99.99l-2.965 2.963h10.83A5.299 5.299 0 0 0 18.6 8.978V.7a.7.7 0 0 1 .7-.7Z"
-              />
-            </svg>
-          </button>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="12"
+                height="12"
+                viewBox="0 0 20 20"
+              >
+                <path
+                  fill="currentColor"
+                  d="M19.3 0a.7.7 0 0 1 .7.7v8.278a6.7 6.7 0 0 1-6.699 6.698l-10.996-.001l3.131 3.13a.7.7 0 0 1-.99.99l-4.24-4.241a.7.7 0 0 1 0-.99l4.241-4.241a.7.7 0 1 1 .99.99l-2.965 2.963h10.83A5.299 5.299 0 0 0 18.6 8.978V.7a.7.7 0 0 1 .7-.7Z"
+                />
+              </svg>
+            </button>
+          )}
         </form>
 
         {/* Browse URL History */}

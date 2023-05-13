@@ -1,4 +1,12 @@
 import { logo } from "../assets";
+import {
+  PROJECT_NAME,
+  PROJECT_GITHUB_LINK,
+  HERO_TITLE_LEFT,
+  HERO_TITLE_RIGHT,
+  HERO_SUBTITLE_LEFT,
+  HERO_SUBTITLE_RIGHT,
+} from "../constants";
 
 const Hero = () => {
   return (
@@ -6,21 +14,16 @@ const Hero = () => {
       <nav className="flex justify-between items-center w-full mb-10 pt-3">
         <img
           src={logo}
-          alt="Sumz"
+          alt={PROJECT_NAME}
+          title={PROJECT_NAME}
           className="w-28 object-contain"
-          title="Summize"
           draggable="false"
           loading="lazy"
         />
 
         <button
           type="button"
-          onClick={() =>
-            window.open(
-              "https://github.com/Technical-Shubham-tech/ai-summarizer",
-              "_blank"
-            )
-          }
+          onClick={() => window.open(PROJECT_GITHUB_LINK, "_blank")}
           className="black_btn flex items-center gap-1"
           title="View Source Code"
         >
@@ -42,15 +45,14 @@ const Hero = () => {
       </nav>
 
       <h1 className="head_text">
-        Summarize Articles with <br className="max-md:hidden" />
-        <span className="orange_gradient">OpenAI GPT-4</span>
+        {HERO_TITLE_LEFT} <br className="max-md:hidden" />
+        <span className="orange_gradient">{HERO_TITLE_RIGHT}</span>
       </h1>
 
       <h2 className="desc">
-        Simplify your reading with{" "}
-        <span className="orange_gradient">Summize</span>, an open-source article
-        summarizer that transforms lengthy articles into clear and concise
-        summaries
+        {HERO_SUBTITLE_LEFT}{" "}
+        <span className="orange_gradient">{PROJECT_NAME}</span>,{" "}
+        {HERO_SUBTITLE_RIGHT}
       </h2>
     </header>
   );
