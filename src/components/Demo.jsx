@@ -11,6 +11,7 @@ const Demo = () => {
     summary: "",
   });
   const [allArticles, setAllArticles] = useState([]);
+  const [copied, setCopied] = useState("");
 
   const [getSummary, { error, isFetching }] = useLazyGetSummaryQuery();
 
@@ -41,6 +42,12 @@ const Demo = () => {
         JSON.stringify(updatedAllArticles)
       );
     }
+  };
+
+  const handleCopy = (copyUrl) => {
+    setCopied(copyUrl);
+    navigator.clipboard.writeText(copyUrl);
+    setTimeout(() => setCopied(false), 3000);
   };
 
   return (
@@ -78,10 +85,10 @@ const Demo = () => {
         <div className="flex flex-col gap-1 max-h-60 overflow-y-auto">
           {allArticles.map((article, i) => (
             <div className="link_card" key={`link-${i}`}>
-              <div className="copy_btn">
+              <div className="copy_btn" onClick={() => handleCopy(article.url)}>
                 <img
-                  src={copy}
-                  alt="Copy"
+                  src={copied === article.url ? tick : copy}
+                  alt={copied === article.url ? "Copied" : "Copy"}
                   className="w-[40%] h-[40%] object-contain"
                 />
               </div>
