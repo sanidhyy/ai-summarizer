@@ -40,7 +40,7 @@
     "valid-url": "^1.0.9"
   },
   "devDependencies": {
-    "@types/react": "^18.0.28",
+    "@types/react": "^18.2.7",
     "@types/react-dom": "^18.0.11",
     "@vitejs/plugin-react": "^4.0.0",
     "autoprefixer": "^10.4.14",
