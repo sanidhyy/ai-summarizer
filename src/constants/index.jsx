@@ -1,7 +1,7 @@
 // Project Info
 const PROJECT_NAME = "Summize";
 const PROJECT_GITHUB_LINK =
-  "https://github.com/Technical-Shubham-tech/ai-summarizer";
+  "https://github.com/sanidhyy/ai-summarizer";
 
 // Hero Section
 const HERO_TITLE_LEFT = "Summarize Articles with";
