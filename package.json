@@ -41,7 +41,7 @@
   },
   "devDependencies": {
     "@types/react-dom": "^18.3.0",
-    "@types/react": "^18.3.10",
+    "@types/react": "^18.3.11",
     "@vitejs/plugin-react": "^4.3.2",
     "eslint": "^8.57.1",
     "autoprefixer": "^10.4.20",
