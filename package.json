@@ -43,7 +43,7 @@
     "@types/react-dom": "^18.3.1",
     "@types/react": "^18.3.12",
     "@vitejs/plugin-react": "^4.3.3",
-    "eslint": "^9.15.0",
+    "eslint": "^9.16.0",
     "autoprefixer": "^10.4.20",
     "eslint-plugin-react": "^7.37.2",
     "eslint-plugin-react-hooks": "^5.0.0",
