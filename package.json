@@ -34,13 +34,13 @@
   "dependencies": {
     "@reduxjs/toolkit": "^2.6.1",
     "react": "^19.1.0",
-    "react-dom": "^19.0.0",
+    "react-dom": "^19.1.0",
     "react-redux": "^9.2.0",
     "react-toastify": "^11.0.5",
     "valid-url": "^1.0.9"
   },
   "devDependencies": {
-    "@types/react-dom": "^19.0.4",
+    "@types/react-dom": "^19.1.1",
     "@types/react": "^19.0.12",
     "@vitejs/plugin-react": "^4.3.4",
     "eslint": "^9.23.0",
