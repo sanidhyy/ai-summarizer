@@ -40,7 +40,7 @@
     "valid-url": "^1.0.9"
   },
   "devDependencies": {
-    "@types/react-dom": "^19.2.0",
+    "@types/react-dom": "^19.2.2",
     "@types/react": "^19.2.1",
     "@vitejs/plugin-react": "^5.0.4",
     "eslint": "^9.37.0",
