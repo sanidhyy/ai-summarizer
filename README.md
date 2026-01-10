@@ -2,14 +2,14 @@
 
 ![Modern OpenAI GPT-4 Article Summarizer](/.github/images/img_main.png "Modern OpenAI GPT-4 Article Summarizer")
 
-[![Ask Me Anything!](https://img.shields.io/badge/Ask%20me-anything-1abc9c.svg)](https://github.com/Technical-Shubham-tech "Ask Me Anything!")
-[![GitHub license](https://img.shields.io/github/license/Technical-Shubham-tech/ai-summarizer)](https://github.com/Technical-Shubham-tech/ai-summarizer/blob/main/LICENSE.md "GitHub license")
-[![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://github.com/Technical-Shubham-tech/ai-summarizer/commits/main "Maintenance")
-[![GitHub branches](https://badgen.net/github/branches/Technical-Shubham-tech/ai-summarizer)](https://github.com/Technical-Shubham-tech/ai-summarizer/branches "GitHub branches")
-[![Github commits](https://badgen.net/github/commits/Technical-Shubham-tech/ai-summarizer/main)](https://github.com/Technical-Shubham-tech/ai-summarizer/commits "Github commits")
+[![Ask Me Anything!](https://img.shields.io/badge/Ask%20me-anything-1abc9c.svg)](https://github.com/sanidhyy "Ask Me Anything!")
+[![GitHub license](https://img.shields.io/github/license/sanidhyy/ai-summarizer)](https://github.com/sanidhyy/ai-summarizer/blob/main/LICENSE.md "GitHub license")
+[![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://github.com/sanidhyy/ai-summarizer/commits/main "Maintenance")
+[![GitHub branches](https://badgen.net/github/branches/sanidhyy/ai-summarizer)](https://github.com/sanidhyy/ai-summarizer/branches "GitHub branches")
+[![Github commits](https://badgen.net/github/commits/sanidhyy/ai-summarizer/main)](https://github.com/sanidhyy/ai-summarizer/commits "Github commits")
 [![Netlify Status](https://api.netlify.com/api/v1/badges/4b406197-21d8-4e96-9fdd-52c782540f0e/deploy-status)](https://summise.netlify.app/ "Netlify Status")
-[![GitHub issues](https://img.shields.io/github/issues/Technical-Shubham-tech/ai-summarizer)](https://github.com/Technical-Shubham-tech/ai-summarizer/issues "GitHub issues")
-[![GitHub pull requests](https://img.shields.io/github/issues-pr/Technical-Shubham-tech/ai-summarizer)](https://github.com/Technical-Shubham-tech/ai-summarizer/pulls "GitHub pull requests")
+[![GitHub issues](https://img.shields.io/github/issues/sanidhyy/ai-summarizer)](https://github.com/sanidhyy/ai-summarizer/issues "GitHub issues")
+[![GitHub pull requests](https://img.shields.io/github/issues-pr/sanidhyy/ai-summarizer)](https://github.com/sanidhyy/ai-summarizer/pulls "GitHub pull requests")
 
 ## ⚠️ Before you start
 
@@ -62,8 +62,8 @@ You might encounter some bugs while using this app. You are more than welcome to
 
 ## :rocket: Follow Me
 
-[![GitHub followers](https://img.shields.io/github/followers/Technical-Shubham-tech?style=social&label=Follow&maxAge=2592000)](https://github.com/Technical-Shubham-tech "Follow Me")
-[![Twitter](https://img.shields.io/twitter/url?style=social&url=https%3A%2F%2Ftwitter.com%2FTechnicalShubam)](https://twitter.com/intent/tweet?text=Wow:&url=https%3A%2F%2Fgithub.com%2FTechnical-Shubham-tech%2Fmedical-chat-app "Tweet")
+[![GitHub followers](https://img.shields.io/github/followers/sanidhyy?style=social&label=Follow&maxAge=2592000)](https://github.com/sanidhyy "Follow Me")
+[![Twitter](https://img.shields.io/twitter/url?style=social&url=https%3A%2F%2Ftwitter.com%2Fsanidhyyy)](https://twitter.com/intent/tweet?text=Wow:&url=https%3A%2F%2Fgithub.com%2Fsanidhyy%2Fmedical-chat-app "Tweet")
 [![YouTube](https://img.shields.io/badge/YouTube-FF0000?style=for-the-badge&logo=youtube&logoColor=white)](https://www.youtube.com/channel/UCNAz_hUVBG2ZUN8TVm0bmYw "Subscribe my Channel")
 
 ## :star: Give A Star
