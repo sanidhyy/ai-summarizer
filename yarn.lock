@@ -2725,10 +2725,10 @@ react-is@^16.13.1:
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.13.1.tgz#789729a4dc36de2999dc156dd6c1d9c18cea56a4"
   integrity sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==
 
-react-redux@^9.2.0:
-  version "9.2.0"
-  resolved "https://registry.yarnpkg.com/react-redux/-/react-redux-9.2.0.tgz#96c3ab23fb9a3af2cb4654be4b51c989e32366f5"
-  integrity sha512-ROY9fvHhwOD9ySfrF0wmvu//bKCQ6AeZZq1nJNtbDC+kk5DuSuNX/n6YWYF/SYy7bSba4D4FSz8DJeKY/S/r+g==
+react-redux@^9.3.0:
+  version "9.3.0"
+  resolved "https://registry.yarnpkg.com/react-redux/-/react-redux-9.3.0.tgz#a30113bb6d95c0a715d54dda4308d450fca6ce09"
+  integrity sha512-KQopgqFo/p/fgmAs5qz6p5RWaNAzq40WAu7fJIXnQpYxFPbJYtsJPWvGeF2rOBaY/kEuV77AVsX8TsQzKm+A/g==
   dependencies:
     "@types/use-sync-external-store" "^0.0.6"
     use-sync-external-store "^1.4.0"
