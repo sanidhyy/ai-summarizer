@@ -36,6 +36,14 @@ VITE_RAPIDAPI_ARTICLE_KEY=XXXXXXXXXXXXXXXXXXXXXXX
 
 **NOTE:** Make sure you don't share these keys publicaly.
 
+### :raising_hand: Need Help?
+
+If you run into issues during installation or setup:
+
+- **GitHub Discussions** — [Open a Q&A discussion](https://github.com/sanidhyy/ai-summarizer/discussions/new?category=q-a) for setup and troubleshooting help.
+- **Email** — [sanidhyyy@gmail.com](mailto:sanidhyyy@gmail.com)
+- **Discord** — `sanidhyy`
+
 ## :camera: Screenshots:
 
 ![Modern UI/UX](/.github/images/img1.png "Modern UI/UX")
