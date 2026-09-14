@@ -33,7 +33,7 @@
   },
   "dependencies": {
     "@reduxjs/toolkit": "^2.12.0",
-    "react": "^19.2.8",
+    "react": "^19.3.0",
     "react-dom": "^19.2.8",
     "react-redux": "^9.3.0",
     "react-toastify": "^11.1.0",
@@ -41,7 +41,7 @@
   },
   "devDependencies": {
     "@types/react-dom": "^19.2.7",
-    "@types/react": "^19.2.18",
+    "@types/react": "^19.3.0",
     "@vitejs/plugin-react": "^6.1.1",
     "eslint": "^9.39.2",
     "autoprefixer": "^10.5.5",
