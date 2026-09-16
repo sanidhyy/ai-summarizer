@@ -30,9 +30,9 @@ VITE_RAPIDAPI_ARTICLE_KEY=XXXXXXXXXXXXXXXXXXXXXXX
 
 7. After enabling you can get your API Keys and paste them in `.env` file in `VITE_RAPIDAPI_ARTICLE_KEY`.
 
-8. Open terminal and run `npm install` or `yarn install` in root folder to install necessary packages.
+8. Open terminal and run `npm install` or `pnpm install` in root folder to install necessary packages.
 
-9. Now app is fully configured :+1: and you can start using this app using `npm run dev` or `yarn dev`.
+9. Now app is fully configured :+1: and you can start using this app using `npm run dev` or `pnpm dev`.
 
 **NOTE:** Make sure you don't share these keys publicaly.
 
@@ -81,7 +81,7 @@ You can also give this repository a star to show more people and they can use th
 
 In the project directory, you can run:
 
-### `yarn run dev`
+### `pnpm dev`
 
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
@@ -89,12 +89,12 @@ Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 The page will reload when you make changes.\
 You may also see any lint errors in the console.
 
-### `yarn test`
+### `pnpm test`
 
 Launches the test runner in the interactive watch mode.\
 See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `yarn run build`
+### `pnpm build`
 
 Builds the app for production to the `dist` folder.\
 It correctly bundles React in production mode and optimizes the build for the best performance.
@@ -104,7 +104,7 @@ Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `yarn eject`
+### `pnpm eject`
 
 **Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
@@ -140,6 +140,6 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/a
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
 
-### `yarn run build` fails to minify
+### `pnpm build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
