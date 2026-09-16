@@ -19,20 +19,20 @@
 4. Contents of **.env**:
 
 ```
-VITE_RAPIDAPI_ARTICLE_KEY=XXXXXXXXXXXXXXXXXXXXXXX
+RAPIDAPI_ARTICLE_KEY=XXXXXXXXXXXXXXXXXXXXXXX
 ```
 
 5.  Now, to setup Article Summarizer API, go to [Rapid API Website](https://rapidapi.com/) and create an account.
 
-6.  Enable this API to fetch music data: [API: Article Extractor and Summarizer by Anthony](https://rapidapi.com/restyler/api/article-extractor-and-summarizer "API: Article Extractor and Summarizer by Anthony").
+6.  Enable this API: [API: Article Extractor and Summarizer by Anthony](https://rapidapi.com/restyler/api/article-extractor-and-summarizer "API: Article Extractor and Summarizer by Anthony").
 
 ![Copy API Key](/.github/images/step_api.png "Copy API Key")
 
-7. After enabling you can get your API Keys and paste them in `.env` file in `VITE_RAPIDAPI_ARTICLE_KEY`.
+7. After enabling you can get your API Keys and paste them in `.env` file in `RAPIDAPI_ARTICLE_KEY`.
 
 8. Open terminal and run `npm install` or `pnpm install` in root folder to install necessary packages.
 
-9. Now app is fully configured :+1: and you can start using this app using `npm run dev` or `pnpm dev`.
+9. Now app is fully configured :+1: and you can start using this app using `npm run dev` or `pnpm dev` (Netlify CLI + Vite). Use `npm run vite` or `pnpm vite` only for UI work without the summarizer function.
 
 **NOTE:** Make sure you don't share these keys publicaly.
 
@@ -83,23 +83,25 @@ In the project directory, you can run:
 
 ### `pnpm dev`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Runs the app with Netlify CLI. Open [http://localhost:8888](http://localhost:8888) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+The page will reload when you make changes. You may also see any lint errors in the console.
+
+### `pnpm vite`
+
+Runs Vite only (no Netlify Function).
 
 ### `pnpm test`
 
-Launches the test runner in the interactive watch mode.\
+Launches the test runner in the interactive watch mode.
 See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
 ### `pnpm build`
 
-Builds the app for production to the `dist` folder.\
+Builds the app for production to the `dist` folder.
 It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
+The build is minified and the filenames include the hashes.
 Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.

@@ -12,14 +12,11 @@ node_modules
 dist
 dist-ssr
 *.local
+.pnpm-store
 
 # Environment Variables
-.env
-.env.local
-.env.development
-.env.production
-.env.staging
-.env.qa
+.env*
+!.env.example
 
 # Editor directories and files
 .idea
